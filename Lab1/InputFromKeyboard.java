@@ -1,4 +1,4 @@
-package week1;
+package Lab1;
 import java.util.Scanner;
 public class InputFromKeyboard {
     public static void main(String[] args) {
