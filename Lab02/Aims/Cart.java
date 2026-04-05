@@ -7,7 +7,7 @@ public class Cart {
     private int qtyOrdered = 0;
     
     
-    // Add DVD
+    //12 Add DVD
     public void addDigitalVideoDisc(DigitalVideoDisc disc) {
         if (qtyOrdered < MAX_NUMBERS_ORDERED) {
             itemsOrdered[qtyOrdered] = disc;
@@ -17,6 +17,18 @@ public class Cart {
             System.out.println("The cart is almost full");
         }
     }
+    // 14.1
+    public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
+        for (DigitalVideoDisc disc : dvdList) {
+            addDigitalVideoDisc(disc);
+        }
+    }
+    //14.2 2 DVD
+    public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
+        addDigitalVideoDisc(dvd1);
+        addDigitalVideoDisc(dvd2);
+    }
+    //13 Xoa DVD
     public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
         boolean found = false;
         for (int i = 0; i < qtyOrdered; i++) {
