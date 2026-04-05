@@ -32,5 +32,13 @@ public class Aims {
         Cart anOrder2 = new Cart();
         anOrder2.addDigitalVideoDisc(dvd2, dvd3);
         anOrder2.printCart();
+        //Bai 16
+        System.out.println("\n16 5 DVD đã tạo");
+        System.out.println("DVD1 id: " + dvd1.getId());  
+        System.out.println("DVD2 id: " + dvd2.getId());
+        System.out.println("DVD3 id: " + dvd3.getId());
+        System.out.println("DVD4 id: " + dvd1.getId());
+        System.out.println("DVD5 id: " + dvd1.getId());
+        System.out.println("Total DVDs created: " + DigitalVideoDisc.getNbDigitalVideoDiscs());
     }
 }
