@@ -1,9 +1,0 @@
-2. Passing parameter (Addition)
-a. When calling the swap(jungleDVD, cinderellaDVD) method, Java passes the copies of the object references, not the actual objects themselves.
-Inside the swap(...) method, only those local copies are swapped, not the actual ones. That's why the original jungleDVD and cinderellaDVD remain unchanged.
-b. In this case, the method changeTitle(...) modifies the state of the object through its reference copy passed into the method (field "title" modified)
-Because in memory, both local and original references point to the same object.
-
-8. Create Constructor method
-Java still allows me to do so, however a warning message appears saying that the constructor may be a duplicate.
-My program still runs fine, and Java prioritizes using the first constructor written.
