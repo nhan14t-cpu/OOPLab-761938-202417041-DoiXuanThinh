@@ -1,0 +1,96 @@
+```mermaid
+classDiagram
+
+class Media {
+    <<abstract>>
+    -int id
+    -String title
+    -String category
+    -float cost
+    +getId() int
+    +setId(id:int)
+    +getTitle() String
+    +setTitle(title:String)
+    +getCategory() String
+    +setCategory(category:String)
+    +getCost() float
+    +setCost(cost:float)
+    +equals(o:Object) boolean
+    +isMatch(title:String) boolean
+}
+
+class Playable {
+    <<interface>>
+    +play()
+}
+
+class Disc {
+    -String director
+    -int length
+    +getDirector() String
+    +setDirector(director:String)
+    +getLength() int
+    +setLength(length:int)
+}
+
+class DigitalVideoDisc {
+    +DigitalVideoDisc(title:String)
+    +DigitalVideoDisc(title:String, category:String, cost:float)
+    +DigitalVideoDisc(title:String, category:String, director:String, cost:float)
+    +DigitalVideoDisc(title:String, category:String, director:String, length:int, cost:float)
+    +play()
+}
+
+class CompactDisc {
+    -String artist
+    -tracks
+    +getArtist() String
+    +addTrack(track:Track)
+    +removeTrack(track:Track)
+    +getLength() int
+    +play()
+}
+
+class Book {
+    -authors
+    +addAuthor(author:String)
+    +removeAuthor(author:String)
+}
+
+class Track {
+    -String title
+    -int length
+    +getTitle() String
+    +getLength() int
+    +play()
+}
+
+class Cart {
+    -itemsOrdered
+    +addMedia(media:Media)
+    +removeMedia(media:Media)
+    +totalCost() float
+    +print()
+    +searchById(id:int)
+    +searchByTitle(title:String)
+}
+
+class Store {
+    -itemsInStore
+    +addMedia(media:Media)
+    +removeMedia(media:Media)
+}
+
+Media <|-- Disc
+Disc <|-- DigitalVideoDisc
+Disc <|-- CompactDisc
+Media <|-- Book
+
+Playable <|.. DigitalVideoDisc
+Playable <|.. CompactDisc
+Playable <|.. Track
+
+Cart o-- "0..*" Media : contains
+Store o-- "0..*" Media : contains
+CompactDisc *-- "0..*" Track : tracks
+```
